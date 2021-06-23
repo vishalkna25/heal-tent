@@ -16,6 +16,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    overflow-x: hidden;
 }
 
 .-S {
@@ -756,7 +758,7 @@ body {
     cursor: pointer;
 }
 
-.aup-de{
+.aup-de {
     margin: 10px auto 0;
     color: var(--primary-color);
     text-align: center;
@@ -771,11 +773,15 @@ body {
 
 .atl {
     font-size: 0.850rem !important;
+    line-height: 18px;
 }
 
 .aup-dl {
     display: flex;
     height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     margin: 10px auto 0;
     align-items: center;
     justify-content: center;
@@ -797,5 +803,161 @@ body {
 @media only screen and (min-width: 320px) and (max-width: 500px) {
     .auh-ti {
         font-size: 3.5rem;
+    }
+}
+
+/* Contact us section */
+.cu {
+    background: #262626;
+}
+
+.cu-h {
+    display: block;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.cuh-ti {
+    margin: 0;
+    color: var(--font-color-white);
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.cuh-tis {
+    margin: 10px 0 15px;
+    color: #a6a6a6;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.cua {
+    display: flex;
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    color: var(--font-color-white) !important;
+    font-size: 3.25rem !important;
+    font-weight: 800;
+    border-radius: 50%;
+    text-decoration: none;
+    letter-spacing: 4px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.25);
+    z-index: 5;
+}
+
+.cua::after {
+    opacity: 0;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: 0;
+    bottom: 0;
+    content: '';
+    height: 300px;
+    width: 300px;
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    animation-name: ripple;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale3d(1.0, 1.0, 1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale3d(1.2, 1.2, 1);
+    }
+}
+
+.cua-ig {
+    display: block;
+    font-size: 8rem;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    left: 0;
+    animation: handshake 3s 0s infinite;
+    z-index: -1;
+}
+
+@keyframes handshake {
+    33%, 100% {
+        transform: rotate(0deg);
+    }
+
+    66% {
+        transform: rotate(60deg);
+    }
+}
+
+.cu-ms {
+    display: flex;
+    width: 320px;
+    height: 50px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: inset 8px 8px 8px #1a1a1a,
+    inset -8px -8px 8px #404040;
+    align-items: center;
+}
+.cu-ms svg {
+    height: 22px;
+    margin: 0 10px 0 25px;
+}
+
+.cu-ms input {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: var(--font-color-white);
+    padding-left: 10px;
+}
+
+.cu-msb {
+    display: block;
+    margin: 30px auto;
+    width: 250px;
+    height: 50px;
+    border: 1px solid var(--seconday-color);
+    border-radius: 5px;
+    background: var(--seconday-color);
+    color: var(--font-color-white);
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 501px) and (max-width: 676px) {
+    .cuh-ti {
+        font-size: 4rem;
+    }
+    .cuh-tis {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+    .cuh-ti {
+        font-size: 2.5rem;
+    }
+    .cuh-tis {
+        font-size: 0.65rem;
     }
 }
